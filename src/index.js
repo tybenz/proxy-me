@@ -15,8 +15,8 @@ var log = function() {
 module.exports = function( opts ) {
     opts = util._extend({
         port: 3000,
-        certPath: path.join( __dirname, 'ssl', 'cert.pem' ),
-        keyPath: path.join( __dirname, 'ssl', 'key.pem' ),
+        certPath: path.join( __dirname, '..', 'ssl', 'cert.pem' ),
+        keyPath: path.join( __dirname, '..', 'ssl', 'key.pem' ),
         https: false,
         dir: process.cwd()
     }, opts );

@@ -1,6 +1,6 @@
 {
   "name": "proxy-me",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Quick and dirty proxy server to dodge CORS stuff",
   "main": "index.js",
   "scripts": {
