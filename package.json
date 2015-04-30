@@ -1,6 +1,6 @@
 {
   "name": "proxy-me",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quick and dirty proxy server to dodge CORS stuff",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "devDependencies": {
     "mocha": "^2.2.4",
     "nock": "^1.7.1"
+  },
+  "bin": {
+    "proxy-me": "bin/proxy-me"
   }
 }
