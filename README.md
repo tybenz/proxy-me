@@ -2,13 +2,13 @@
 
 ## Installation
 
-```shell
+```
 npm install -g
 ```
 
 ## Usage
 
-```shell
+```
   Options:
 
     -h, --help             output usage information
