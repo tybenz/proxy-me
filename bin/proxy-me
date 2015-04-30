@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+var program = require( 'commander' );
+var version = require( '../package.json' ).version;
+var proxyMe = require( '../src/' );
+
+program.version( version );
+
+program
+    .option( '-t, --target [target]', 'REQUIRED - The prefix you\'d like for all paths under source' )
+    .option( '-s, --source [source]', 'REQUIRED - The prefix for all endpoints you\'d like to proxy to' )
+    .option( '-d, --dir [dir]', 'Directory of where to serve static content from' )
+    .option( '-p, --port [port]', 'Port that you\'d like the application to run on' )
+    .option( '-h, --https', 'Set if you\'d like the proxy server to run on https (self-signed cert)' )
+    .parse( process.argv );
+
+if ( !program.source || !program.target ) {
+    // show help by default
+    program.help();
+}
+
+var routes = {};
+routes[ program.target ] = program.source;
+
+var opts = {
+    source: program.source,
+    target: program.target,
+    https: program.https,
+    port: program.port,
+    dir: program.dir,
+    routes: routes
+};
+
+Object.keys( opts ).forEach( function( key ) {
+    if ( !opts[ key ] ) {
+        delete opts[ key ];
+    }
+});
+
+proxyMe( opts );

@@ -1,0 +1,27 @@
+{
+  "name": "proxy-me",
+  "version": "1.0.0",
+  "description": "Quick and dirty proxy server to dodge CORS stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_TEST=true mocha $(find test -name '*.js')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tybenz/proxy-me.git"
+  },
+  "author": "Tyler Benziger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tybenz/proxy-me/issues"
+  },
+  "homepage": "https://github.com/tybenz/proxy-me",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "nock": "^1.7.1"
+  }
+}
